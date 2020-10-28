@@ -1,0 +1,120 @@
+@import 'src/assets/scss/variables';
+
+.game-holder{
+    border-radius: $border-large;
+    
+
+
+    
+}
+
+.game-info{
+    background-color: $secondary-bg;
+    position: relative;
+    border-radius: $border-medium;
+
+
+    .screenshots img{
+            width: 100%;
+            height: 250px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            cursor: pointer;
+        }
+    .metacritic{
+        width: 38px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30%;
+        position: absolute;
+        top: 255px;
+        right: 10px;
+        font-size: 0.8em;
+    }
+
+ 
+
+    &:hover{
+        transform: scale(1.03);
+        transition: 0.2s ease-in;
+        z-index: 10;
+
+    }
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+    .show-more{
+        position: absolute;
+        left: 50%;
+        top: 350px;
+        transform: translate(-50%, 0%);
+        cursor: pointer;
+        display: none;
+        padding: 0.4em;
+        background: #ff0000b0;
+        border-radius: $border-medium;
+        color: white;
+    }
+    
+    .game-img{
+        height: 250px;
+        display: flex;
+        cursor: pointer;
+        img{
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        &:hover{
+            opacity: 0;
+        }
+    }
+    .game-desc{
+        height: 110px;
+        h1{
+            font-size: 1.5em;
+            margin: 1.8em 0.5em;
+            
+            &:hover{
+                color: yellow;
+            }
+        }
+    }
+    .game-video{    
+        width: 100%;
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        cursor: pointer;
+        video{
+            object-fit: cover;
+            width: 100%;
+            height: 250px;
+            border-radius: 10px 10px 0 0;
+        }
+
+    }
+
+    .game-video-show{
+            opacity: 1;
+ 
+        }
+
+    .play-icon{
+        i{
+            font-size: 2.8em;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+<div class="game-holder">
+    <div (mouseenter)="PlayVideo($event)" (mouseleave)="StopVideo($event)" class="game-info">
+        <div class="game-img" >
+            <img [src]="game.background_image" alt="">
+        </div>
+
+        <div class="game-desc">
+            <a>                 
+                <h1>{{game.name}}</h1>
+            </a>
+        </div>
+
+        <div  class="game-video" >
+            <video  class="videos"  [muted]="true" [loop]="true" >
+                <source *ngIf="game.clip" [src]="game.clip.clips['640']" type="video/mp4">
+            </video>
+        </div>
+
+        <div  class="screenshots" >
+            <img *ngIf="!game.clip && game.short_screenshots.length>0" 
+                (mouseenter)="ImageAnimation()"
+                (mouseleave)="StopImageAnimation()" 
+                [src]="game.short_screenshots[iterator].image" alt="">
+        </div>
+    </div>
+</div>
