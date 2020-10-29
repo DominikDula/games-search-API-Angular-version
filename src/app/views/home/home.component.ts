@@ -15,11 +15,11 @@ export class HomeComponent implements OnInit , OnDestroy {
 
   constructor(private homeGames: HomegamesService) { }
 
-//   click(){
+  click(){
     
-//   this.homeGames.page++
-//   this.homeGames.getTrendingGame()
-// }
+  this.homeGames.page++
+  this.homeGames.getTrendingGame()
+}
 
   ngOnInit(): void {
       
@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit , OnDestroy {
   }
   ngOnDestroy():void {
     this.sub.unsubscribe()
+    this.homeGames.page = 1
 }
 
 }

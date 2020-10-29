@@ -1,3 +1,5 @@
 <div class="grid-container">
-    <h1>DEVELOPERS</h1> 
+    <div *ngFor="let item of results" >
+        <template-list [item]="item"></template-list>
+    </div>
 </div> 

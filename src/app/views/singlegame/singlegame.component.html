@@ -1,0 +1,38 @@
+<div class="bg-image" [style]="{ backgroundImage: 'url(' + results.background_image + ')' }"></div>
+
+<div class="single-game-name">
+    <h1>{{results.name}}</h1>
+</div>
+
+<div class="single-game-container" [style]="{ backgroundImage: 'url(' + results.background_image_additional + ')' }" >
+    <h1>About</h1>
+    <div class="single-game-desc" >
+        <div [innerHTML]="about"></div>
+        <span *ngIf="boolean && about.length>500"  (click)="ReadMore()" >read more</span>
+        <span *ngIf="!boolean && about.length>500" (click)="ReadLess()" >read less</span>
+    </div>
+    
+    <div class="single-game-wrapper">
+        <div class="single-game-detail">
+            <section>
+                <h3>Genres</h3>
+                <a *ngFor="let genre of results.genres">{{genre.name}}</a>   
+            </section>  
+
+            <section>
+                <h3>Developers</h3>
+                <a *ngFor="let developer of results.developers">{{developer.name}}</a> 
+            </section>
+
+            <section>
+                <h3>Platforms</h3>
+                <a *ngFor="let platform of results.platforms">{{platform.platform.name}}</a> 
+            </section>
+
+            <section>
+                <h3>Tags</h3>
+                <a *ngFor="let tag of results.tags">{{tag.name}}</a> 
+            </section>
+        </div>
+    </div>
+</div>

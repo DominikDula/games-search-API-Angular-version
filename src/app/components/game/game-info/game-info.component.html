@@ -1,11 +1,11 @@
 <div class="game-holder">
     <div (mouseenter)="PlayVideo($event)" (mouseleave)="StopVideo($event)" class="game-info">
-        <div class="game-img" >
+        <div  class="game-img">
             <img [src]="game.background_image" alt="">
         </div>
 
         <div class="game-desc">
-            <a>                 
+            <a [routerLink]="['/games',game.slug]" >
                 <h1>{{game.name}}</h1>
             </a>
         </div>

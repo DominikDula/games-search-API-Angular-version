@@ -8,10 +8,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { DevelopersComponent } from './views/developers/developers.component';
 import { AllgamesComponent } from './views/allgames/allgames.component';
+import { SinglegameComponent } from './views/singlegame/singlegame.component';
 //components
 import { TheNavigationComponent } from '@app/components/the-navigation/the-navigation.component';
 import { SearchGamesComponent } from './components/game/search-games/search-games.component';
 import { GameInfoComponent } from './components/game/game-info/game-info.component';
+import { TemplateListComponent } from './components/template-list/template-list.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { GameInfoComponent } from './components/game/game-info/game-info.compone
     AllgamesComponent,
     TheNavigationComponent,
     SearchGamesComponent,
-    GameInfoComponent
+    GameInfoComponent,
+    TemplateListComponent,
+    SinglegameComponent
   ],
   imports: [
     BrowserModule,

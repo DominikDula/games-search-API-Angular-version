@@ -1,0 +1,15 @@
+<div class="item-info" [style]="{ backgroundImage: 'url(' + item.image_background + ')' }" >    
+    <div class="router-item" >   
+        <div class="item-name">                
+            <h1>{{item.name}}</h1>
+        </div>
+    </div>
+    <div class="item-desc">
+        <h3>Popular games:</h3>             
+        <ul>
+            <li *ngFor="let game of item.games.slice(0, 3)">
+                <a [routerLink]="['/games',game.slug]">{{game.name}}</a>  
+            </li>
+        </ul>
+    </div>
+</div>

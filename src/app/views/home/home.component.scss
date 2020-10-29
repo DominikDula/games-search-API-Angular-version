@@ -1,0 +1,7 @@
+@import '/./src/assets/scss/variables';
+h1{
+    max-width: $base-width;
+    margin: 70px auto 0;
+    display: flex;
+    justify-content: center;
+}

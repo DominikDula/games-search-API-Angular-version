@@ -1,5 +1,8 @@
-<div class="grid-container">
-    <div *ngFor="let item of results" >
-        <game-info [game]="item"></game-info>
-    </div>
-</div> 
+<div>
+    <h1>New and Trending</h1>
+    <div class="grid-container">
+        <div *ngFor="let item of results" >
+            <game-info [game]="item"></game-info>
+        </div>
+    </div> 
+</div>
