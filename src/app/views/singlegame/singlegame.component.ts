@@ -14,6 +14,7 @@ export class SinglegameComponent implements OnInit {
     shortabout : string
     longabout : string
     boolean : boolean = true
+    sub : any = ''
 
   constructor(private singlegame: SinglegameService,private route: ActivatedRoute) { }
 
@@ -29,7 +30,7 @@ export class SinglegameComponent implements OnInit {
   ngOnInit(): void {
         this.slug = this.route.snapshot.params.slug
         this.singlegame.getSingleGame(this.slug)
-        this.singlegame.singleGame.subscribe((data: any) => {
+        this.sub = this.singlegame.singleGame.subscribe((data: any) => {
         this.results = data
         this.about = data.description.substring(0,550) +'...'
         this.shortabout = data.description.substring(0,550)
@@ -38,5 +39,8 @@ export class SinglegameComponent implements OnInit {
         
     })
   }
+  ngOnDestroy():void {
+    this.sub.unsubscribe()
+}
 
 }

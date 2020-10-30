@@ -6,14 +6,13 @@ import { HttpClient } from '@angular/common/http'
 })
 export class HomegamesService {
     @Output() trendingGames: EventEmitter<any> = new EventEmitter()
-    page : number = 1
     private games : any = []
 
   constructor(private httpClient: HttpClient) { }
 
 
-  getTrendingGame(){
-    this.httpClient.get(`https://rawg.io/api/games/lists/main?page=${this.page}`).subscribe(
+  getTrendingGame(page){
+    this.httpClient.get(`https://rawg.io/api/games/lists/main?page=${page}`).subscribe(
         
 
         (data: any) => {

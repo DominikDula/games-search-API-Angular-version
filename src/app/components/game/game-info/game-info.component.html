@@ -1,6 +1,6 @@
-<div class="game-holder">
+<div (mouseenter)="ShowOnHover()" (mouseleave)="ShowOnHover()" class="game-holder">
     <div (mouseenter)="PlayVideo($event)" (mouseleave)="StopVideo($event)" class="game-info">
-        <div  class="game-img">
+        <div [routerLink]="['/games',game.slug]"  class="game-img">
             <img [src]="game.background_image" alt="">
         </div>
 
@@ -10,10 +10,14 @@
             </a>
         </div>
 
-        <div  class="game-video" >
+        <div [routerLink]="['/games',game.slug]"  class="game-video" >
             <video  class="videos"  [muted]="true" [loop]="true" >
                 <source *ngIf="game.clip" [src]="game.clip.clips['640']" type="video/mp4">
             </video>
+        </div>
+        <div  *ngIf="showIcon" class="play-icon">
+            <i *ngIf="game.clip" class="fas fa-play-circle"></i>
+            <i *ngIf="!game.clip" class="fas fa-image"></i>
         </div>
 
         <div  class="screenshots" >
@@ -21,6 +25,26 @@
                 (mouseenter)="ImageAnimation()"
                 (mouseleave)="StopImageAnimation()" 
                 [src]="game.short_screenshots[iterator].image" alt="">
+        </div>
+
+        <div *ngIf="isHidden" class="more-info">
+            <ul>
+                <li>
+                    <span class="span-title" >Rating: </span> 
+                    <span>{{game.rating}}</span>
+                </li>
+                <li>
+                    <span class="span-title">Released: </span> 
+                    <span *ngIf="game.released">{{releaseDate}}</span></li>
+                <li>
+                    <span class="span-title">Genres: </span> 
+                    <span class="genre"> 
+                        <a *ngFor="let genre of game.genres.slice(0,3)">
+                            {{ genre.name }},
+                        </a> 
+                    </span>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

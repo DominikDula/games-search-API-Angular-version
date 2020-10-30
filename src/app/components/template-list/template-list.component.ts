@@ -7,7 +7,8 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class TemplateListComponent implements OnInit {
 
-@Input() item :any
+    @Input() item :any
+    pathname : string
 
   constructor() { }
 
@@ -16,6 +17,8 @@ export class TemplateListComponent implements OnInit {
 
 
   ngOnInit(): void {
+      this.pathname = window.location.pathname
+    
   }
 
 }

@@ -9,11 +9,15 @@ import { HomeComponent } from './views/home/home.component';
 import { DevelopersComponent } from './views/developers/developers.component';
 import { AllgamesComponent } from './views/allgames/allgames.component';
 import { SinglegameComponent } from './views/singlegame/singlegame.component';
+import { SingledeveloperComponent } from './views/singledeveloper/singledeveloper.component';
 //components
 import { TheNavigationComponent } from '@app/components/the-navigation/the-navigation.component';
 import { SearchGamesComponent } from './components/game/search-games/search-games.component';
 import { GameInfoComponent } from './components/game/game-info/game-info.component';
 import { TemplateListComponent } from './components/template-list/template-list.component';
+import { LoadMoreComponent } from './components/load-more/load-more.component';
+import { TheFooterComponent } from './components/the-footer/the-footer.component';
+
 
 
 @NgModule({
@@ -26,7 +30,10 @@ import { TemplateListComponent } from './components/template-list/template-list.
     SearchGamesComponent,
     GameInfoComponent,
     TemplateListComponent,
-    SinglegameComponent
+    SinglegameComponent,
+    SingledeveloperComponent,
+    LoadMoreComponent,
+    TheFooterComponent
   ],
   imports: [
     BrowserModule,

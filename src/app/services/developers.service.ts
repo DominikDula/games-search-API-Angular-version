@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http'
 })
 export class DevelopersService {
     @Output() allDevelopers: EventEmitter<any> = new EventEmitter()
-    page : number = 1
     private developers : any = []
 
   constructor(private httpClient: HttpClient) { }
@@ -14,8 +13,8 @@ export class DevelopersService {
 
 
 
-   getAllDevelopers() {
-    this.httpClient.get(`https://api.rawg.io/api/developers?page_size=20&page=${this.page}`).subscribe(
+   getAllDevelopers(page) {
+    this.httpClient.get(`https://api.rawg.io/api/developers?page_size=20&page=${page}`).subscribe(
        
         (data: any) => {
             

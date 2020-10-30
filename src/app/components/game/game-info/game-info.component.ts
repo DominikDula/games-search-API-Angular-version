@@ -11,20 +11,31 @@ export class GameInfoComponent implements OnInit {
 count :number = -1
 iterator :number = 0
 timeout :any
+showIcon :boolean = true
+isHidden :boolean = false
+releaseDate : string
 
   constructor() { }
 
   PlayVideo(event){
-      
       event.target.children[2].children[0].currentTime = 0
       event.target.children[2].children[0].autoplay = true
       event.target.children[2].classList.add("game-video-show");
+      this.showIcon = false
       
   }
   StopVideo(event){
     event.target.children[2].classList.remove("game-video-show");
+    this.showIcon = true
       
   }
+  ShowOnHover(){
+    if(window.innerWidth<665){
+        return false
+    }
+    this.isHidden = !this.isHidden
+
+}
 
   ImageAnimation(){
     if( this.game.short_screenshots.length<1){
@@ -50,7 +61,9 @@ timeout :any
 
 }
 
+
   ngOnInit(): void {
+    this.releaseDate= this.game.released.split('-').reverse().join('.')
   }
 
 }

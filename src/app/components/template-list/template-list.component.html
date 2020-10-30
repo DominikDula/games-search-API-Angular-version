@@ -1,8 +1,8 @@
 <div class="item-info" [style]="{ backgroundImage: 'url(' + item.image_background + ')' }" >    
-    <div class="router-item" >   
-        <div class="item-name">                
+    <div class="router-item" >  
+        <div class="item-name" [routerLink]="[pathname,item.slug]">     
             <h1>{{item.name}}</h1>
-        </div>
+        </div> 
     </div>
     <div class="item-desc">
         <h3>Popular games:</h3>             

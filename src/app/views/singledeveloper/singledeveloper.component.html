@@ -1,9 +1,10 @@
-<div>
-    <h1>New and Trending</h1>
+<div >
+    <h1> Developed by {{info.name}}</h1>
     <div class="grid-container">
-        <div *ngFor="let item of results" >
+        <div *ngFor="let item of results.results" >
             <game-info [game]="item"></game-info>
         </div>
-    </div> 
+    </div>
     <load-more (load)="clickPage($event)"></load-more>
+
 </div>
