@@ -1,5 +1,5 @@
 <div >
-    <h1 *ngIf="info" > Developed by {{info.name}}</h1>
+    <single-template [info]="info"></single-template>
     <div class="grid-container">
         <div *ngFor="let item of results.results" >
             <game-info [game]="item"></game-info>
@@ -8,3 +8,4 @@
     <load-more (load)="clickPage($event)"></load-more>
 
 </div>
+

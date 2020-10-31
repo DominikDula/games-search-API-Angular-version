@@ -1,0 +1,4 @@
+<div class="platform">
+    <h1 *ngIf="info" >{{info.name}}</h1>
+    <article *ngIf="info" [style]="{ backgroundImage: 'url(' + info.image_background + ')' }" [innerHTML]="info.description"></article>
+</div>

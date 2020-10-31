@@ -35,7 +35,7 @@
                 </li>
                 <li>
                     <span class="span-title">Released: </span> 
-                    <span *ngIf="game.released">{{releaseDate}}</span></li>
+                    <span *ngIf="game.released">{{game.released.split('-').reverse().join('.')}}</span></li>
                 <li>
                     <span class="span-title">Genres: </span> 
                     <span class="genre"> 

@@ -1,11 +1,11 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,AfterViewChecked } from '@angular/core';
 
 @Component({
   selector: 'game-info',
   templateUrl: './game-info.component.html',
   styleUrls: ['./game-info.component.scss']
 })
-export class GameInfoComponent implements OnInit {
+export class GameInfoComponent implements OnInit,AfterViewChecked {
 
 @Input() game :any
 count :number = -1
@@ -13,7 +13,6 @@ iterator :number = 0
 timeout :any
 showIcon :boolean = true
 isHidden :boolean = false
-releaseDate : string
 
   constructor() { }
 
@@ -61,9 +60,27 @@ releaseDate : string
 
 }
 
+  ngOnInit(): void {    
+    
+  }
 
-  ngOnInit(): void {
-    this.releaseDate= this.game.released.split('-').reverse().join('.')
+  ngAfterViewChecked(){
+    
+    
+    
+    if(this.game.genres.length <=0 && this.isHidden){
+        return 
+    }
+   // remove last coma from genres//
+   if(this.isHidden){
+    let genre = document.querySelector(".genre")
+    let last = genre.children[genre.children.length - 1]
+    last.textContent = last.textContent.replace(',',' ')
+   }
+    
+
+    
+
   }
 
 }

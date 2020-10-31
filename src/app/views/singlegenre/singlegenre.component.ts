@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, OnDestroy} from '@angular/core';
-import { SingledeveloperService } from '@app/services/singledeveloper.service'
+import { SinglegenreService } from '@app/services/singlegenre.service'
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
-  selector: 'app-singledeveloper',
-  templateUrl: './singledeveloper.component.html',
-  styleUrls: ['./singledeveloper.component.scss']
+  selector: 'app-singlegenre',
+  templateUrl: './singlegenre.component.html',
+  styleUrls: ['./singlegenre.component.scss']
 })
-export class SingledeveloperComponent implements OnInit ,OnDestroy{
+export class SinglegenreComponent implements OnInit , OnDestroy {
 
     @Input() results : any = ''
     slug : string
@@ -17,7 +17,7 @@ export class SingledeveloperComponent implements OnInit ,OnDestroy{
     page : number = 1
     next : any
 
-  constructor(private singledeveloper: SingledeveloperService,private route: ActivatedRoute) { }
+  constructor(private singlegenre: SinglegenreService,private route: ActivatedRoute) { }
 
   clickPage(event){
     if(event.target.className === 'next'){
@@ -35,21 +35,23 @@ export class SingledeveloperComponent implements OnInit ,OnDestroy{
         window.scrollTo(0, 0);
     }
    
-    this.singledeveloper.getSingleDeveloper(this.slug,this.page)
+    this.singlegenre.getSingleGenre(this.slug,this.page)
+
+    
     
 
 }
 
-  ngOnInit(): void {
+ngOnInit(): void {
     this.slug = this.route.snapshot.params.slug
-    this.singledeveloper.getSingleDeveloper(this.slug,this.page)
-    this.sub = this.singledeveloper.singleDeveloper.subscribe((data: any) => {
+    this.singlegenre.getSingleGenre(this.slug,this.page)
+    this.sub = this.singlegenre.singleGenre.subscribe((data: any) => {
         this.results = data
         this.next = data.next
         
     })
-    this.singledeveloper.getDeveloperInfo(this.slug)
-    this.sub2 = this.singledeveloper.singleDeveloperInfo.subscribe((data: any) => {
+    this.singlegenre.getGenreInfo(this.slug)
+    this.sub2 = this.singlegenre.singleGenreInfo.subscribe((data: any) => {
 
         
         this.info = data
@@ -60,5 +62,6 @@ export class SingledeveloperComponent implements OnInit ,OnDestroy{
     this.sub.unsubscribe()
     this.sub2.unsubscribe()
 }
+
 
 }

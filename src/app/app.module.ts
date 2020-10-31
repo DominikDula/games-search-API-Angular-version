@@ -10,6 +10,8 @@ import { DevelopersComponent } from './views/developers/developers.component';
 import { AllgamesComponent } from './views/allgames/allgames.component';
 import { SinglegameComponent } from './views/singlegame/singlegame.component';
 import { SingledeveloperComponent } from './views/singledeveloper/singledeveloper.component';
+import { GenresComponent } from './views/genres/genres.component';
+import { SinglegenreComponent } from './views/singlegenre/singlegenre.component';
 //components
 import { TheNavigationComponent } from '@app/components/the-navigation/the-navigation.component';
 import { SearchGamesComponent } from './components/game/search-games/search-games.component';
@@ -17,6 +19,9 @@ import { GameInfoComponent } from './components/game/game-info/game-info.compone
 import { TemplateListComponent } from './components/template-list/template-list.component';
 import { LoadMoreComponent } from './components/load-more/load-more.component';
 import { TheFooterComponent } from './components/the-footer/the-footer.component';
+import { SingletemplateComponent } from './components/genres-platforms/singletemplate/singletemplate.component';
+
+
 
 
 
@@ -33,7 +38,10 @@ import { TheFooterComponent } from './components/the-footer/the-footer.component
     SinglegameComponent,
     SingledeveloperComponent,
     LoadMoreComponent,
-    TheFooterComponent
+    TheFooterComponent,
+    GenresComponent,
+    SinglegenreComponent,
+    SingletemplateComponent
   ],
   imports: [
     BrowserModule,

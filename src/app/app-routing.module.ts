@@ -6,6 +6,8 @@ import { DevelopersComponent } from './views/developers/developers.component';
 import { AllgamesComponent } from './views/allgames/allgames.component';
 import { SinglegameComponent } from './views/singlegame/singlegame.component';
 import { SingledeveloperComponent } from './views/singledeveloper/singledeveloper.component';
+import { GenresComponent } from './views/genres/genres.component';
+import { SinglegenreComponent } from './views/singlegenre/singlegenre.component';
 
 
 const routes: Routes = [
@@ -14,6 +16,8 @@ const routes: Routes = [
     { path: 'developers/:slug', component: SingledeveloperComponent },
     { path: 'games', component: AllgamesComponent },
     { path: 'games/:slug', component: SinglegameComponent },
+    { path: 'genres', component: GenresComponent },
+    { path: 'genres/:slug', component: SinglegenreComponent },
 
 ];
 
