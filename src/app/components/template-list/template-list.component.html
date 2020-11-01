@@ -1,6 +1,6 @@
 <div class="item-info" [style]="{ backgroundImage: 'url(' + item.image_background + ')' }" >    
     <div class="router-item" >  
-        <div class="item-name" [routerLink]="[pathname,item.slug]">     
+        <div class="item-name" [routerLink]="[pathname,item.slug]" [queryParams]="{ id: item.id }">     
             <h1>{{item.name}}</h1>
         </div> 
     </div>

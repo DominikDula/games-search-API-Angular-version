@@ -1,4 +1,5 @@
 import { Component, OnInit,Input,AfterViewChecked } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'game-info',
@@ -14,9 +15,12 @@ timeout :any
 showIcon :boolean = true
 isHidden :boolean = false
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   PlayVideo(event){
+    if(window.innerWidth<665){
+        return false
+    }
       event.target.children[2].children[0].currentTime = 0
       event.target.children[2].children[0].autoplay = true
       event.target.children[2].classList.add("game-video-show");
@@ -28,6 +32,17 @@ isHidden :boolean = false
     this.showIcon = true
       
   }
+  PlayClickVideo(event){
+    if(window.innerWidth>665){
+       return false
+   }
+       event.target.currentTime = 0
+       event.target.autoplay = true
+       event.target.parentElement.classList.toggle("game-video-show");
+
+    this.showIcon = !this.showIcon;
+  
+}
   ShowOnHover(){
     if(window.innerWidth<665){
         return false
@@ -58,6 +73,13 @@ isHidden :boolean = false
       clearTimeout(this.timeout)
     
 
+}
+
+RouterPush(){
+    if(window.innerWidth<665){
+        return false
+    }  
+        this.router.navigate(['/games',this.game.slug]);
 }
 
   ngOnInit(): void {    

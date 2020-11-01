@@ -1,0 +1,7 @@
+<div class="grid-container">
+    <div *ngFor="let item of results" >
+        <template-list [item]="item"></template-list>
+    </div>
+    
+</div> 
+<load-more (load)="clickPage($event)"></load-more>

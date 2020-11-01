@@ -1,9 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
 //views
 import { HomeComponent } from './views/home/home.component';
 import { DevelopersComponent } from './views/developers/developers.component';
@@ -12,6 +15,10 @@ import { SinglegameComponent } from './views/singlegame/singlegame.component';
 import { SingledeveloperComponent } from './views/singledeveloper/singledeveloper.component';
 import { GenresComponent } from './views/genres/genres.component';
 import { SinglegenreComponent } from './views/singlegenre/singlegenre.component';
+import { TagsComponent } from './views/tags/tags.component';
+import { SingletagComponent } from './views/singletag/singletag.component';
+import { PlatformsComponent } from './views/platforms/platforms.component';
+import { SingleplatformComponent } from './views/singleplatform/singleplatform.component';
 //components
 import { TheNavigationComponent } from '@app/components/the-navigation/the-navigation.component';
 import { SearchGamesComponent } from './components/game/search-games/search-games.component';
@@ -20,8 +27,7 @@ import { TemplateListComponent } from './components/template-list/template-list.
 import { LoadMoreComponent } from './components/load-more/load-more.component';
 import { TheFooterComponent } from './components/the-footer/the-footer.component';
 import { SingletemplateComponent } from './components/genres-platforms/singletemplate/singletemplate.component';
-
-
+import { GamescreenshotsComponent } from './components/game/gamescreenshots/gamescreenshots.component';
 
 
 
@@ -41,12 +47,18 @@ import { SingletemplateComponent } from './components/genres-platforms/singletem
     TheFooterComponent,
     GenresComponent,
     SinglegenreComponent,
-    SingletemplateComponent
+    SingletemplateComponent,
+    GamescreenshotsComponent,
+    TagsComponent,
+    SingletagComponent,
+    PlatformsComponent,
+    SingleplatformComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

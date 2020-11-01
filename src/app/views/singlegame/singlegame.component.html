@@ -36,3 +36,21 @@
         </div>
     </div>
 </div>
+
+<div class="stores-div">
+    <div class="stores-container">
+        <h1>Stores</h1>
+        <div class="stores">
+            <div class="single-store" 
+                *ngFor="let store of results.stores" 
+                [style]="{ backgroundImage: 'url(' + store.store.image_background + ')' }">
+                <h2>{{ store.store.name }}</h2>
+                <a target="_blank" [href]="store.url">Go to Store</a>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+<game-screenshots [slug]="slug" ></game-screenshots>

@@ -7,7 +7,7 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: './singlegame.component.html',
   styleUrls: ['./singlegame.component.scss']
 })
-export class SinglegameComponent implements OnInit {
+export class SinglegameComponent implements OnInit , OnDestroy {
     @Input() results : any = ''
     slug : string
     about : string

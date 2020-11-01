@@ -10,8 +10,8 @@
             </a>
         </div>
 
-        <div [routerLink]="['/games',game.slug]"  class="game-video" >
-            <video  class="videos"  [muted]="true" [loop]="true" >
+        <div (click)="PlayClickVideo($event)"  class="game-video" >
+            <video (click)="RouterPush()"  class="videos"  [muted]="true" [loop]="true" >
                 <source *ngIf="game.clip" [src]="game.clip.clips['640']" type="video/mp4">
             </video>
         </div>

@@ -1,0 +1,18 @@
+@import '/./src/assets/scss/variables';
+
+h1{
+    max-width: $base-width;
+    margin: 30px auto 0; 
+    display: flex;
+    justify-content: center;
+}
+
+
+
+@media (max-width: 655px) { 
+    
+    h1{
+        font-size: 1.3em;
+    }
+    
+}

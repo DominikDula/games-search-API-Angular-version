@@ -1,6 +1,5 @@
 @import 'variables';
 
-
 body{
     background-color: $primary-bg;
     color: #fff;
@@ -12,9 +11,17 @@ body{
 
 }
 
+
+
+
+
 #app{
     width: 100%;
     min-height: 100vh;
+}
+
+.hide{
+    overflow:hidden;
 }
 
 
