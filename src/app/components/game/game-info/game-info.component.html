@@ -1,7 +1,8 @@
 <div (mouseenter)="ShowOnHover()" (mouseleave)="ShowOnHover()" class="game-holder">
     <div (mouseenter)="PlayVideo($event)" (mouseleave)="StopVideo($event)" class="game-info">
-        <div [routerLink]="['/games',game.slug]"  class="game-img">
-            <img [src]="game.background_image" alt="">
+
+        <div (click)="RouterPush()"  class="game-img">
+            <img  [src]="game.background_image" alt="">
         </div>
 
         <div class="game-desc">
@@ -20,7 +21,7 @@
             <i *ngIf="!game.clip" class="fas fa-image"></i>
         </div>
 
-        <div  class="screenshots" >
+        <div (click)="RouterPush()"  class="screenshots" >
             <img *ngIf="!game.clip && game.short_screenshots.length>0" 
                 (mouseenter)="ImageAnimation()"
                 (mouseleave)="StopImageAnimation()" 
@@ -39,8 +40,8 @@
                 <li>
                     <span class="span-title">Genres: </span> 
                     <span class="genre"> 
-                        <a *ngFor="let genre of game.genres.slice(0,3)">
-                            {{ genre.name }},
+                        <a *ngFor="let genre of game.genres.slice(0,3)" (click)="RouterPush('genres/',genre.slug)">
+                            {{genre.name}},
                         </a> 
                     </span>
                 </li>

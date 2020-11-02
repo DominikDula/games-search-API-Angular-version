@@ -75,11 +75,11 @@ isHidden :boolean = false
 
 }
 
-RouterPush(){
+RouterPush(route = '/games',slug = this.game.slug){
     if(window.innerWidth<665){
         return false
     }  
-        this.router.navigate(['/games',this.game.slug]);
+        this.router.navigate([route,slug]);
 }
 
   ngOnInit(): void {    

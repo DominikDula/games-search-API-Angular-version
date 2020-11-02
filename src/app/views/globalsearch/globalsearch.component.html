@@ -1,0 +1,9 @@
+<div>
+    <h1 class="home-h1">Results for '{{query}}'</h1>
+    <div class="grid-container">
+        <div *ngFor="let item of results" >
+            <game-info [game]="item"></game-info>
+        </div>
+    </div> 
+    <load-more (load)="clickPage($event)"></load-more>
+</div>

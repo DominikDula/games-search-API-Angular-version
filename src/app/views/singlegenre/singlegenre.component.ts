@@ -43,6 +43,13 @@ export class SinglegenreComponent implements OnInit , OnDestroy {
 }
 
 ngOnInit(): void {
+    this.route.params.subscribe(routeParams => {
+        this.slug=routeParams.slug
+        this.singlegenre.getSingleGenre(this.slug,this.page)
+        this.singlegenre.getGenreInfo(this.slug)
+
+    });
+    
     this.slug = this.route.snapshot.params.slug
     this.singlegenre.getSingleGenre(this.slug,this.page)
     this.sub = this.singlegenre.singleGenre.subscribe((data: any) => {

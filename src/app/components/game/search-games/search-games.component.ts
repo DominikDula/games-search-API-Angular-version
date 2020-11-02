@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'search-games',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchGamesComponent implements OnInit {
 
-  constructor() { }
+    @ViewChild('gameInput', { static: false }) gameInput: ElementRef
+
+  constructor(private router: Router) { }
+
+  GlobalSearch(value,event){
+    event.preventDefault()
+    value = this.gameInput.nativeElement.value
+    this.router.navigate(['/search',value])
+    this.gameInput.nativeElement.value = ''
+    
+  }
 
   ngOnInit(): void {
+
   }
+
+  
 
 }

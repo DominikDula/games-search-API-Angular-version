@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnDestroy} from '@angular/core';
 import { SinglegameService } from '@app/services/singlegame.service'
 import {ActivatedRoute} from "@angular/router";
 
+
 @Component({
   selector: 'app-singlegame',
   templateUrl: './singlegame.component.html',

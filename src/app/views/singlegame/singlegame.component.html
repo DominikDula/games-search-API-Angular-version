@@ -16,22 +16,29 @@
         <div class="single-game-detail">
             <section>
                 <h3>Genres</h3>
-                <a *ngFor="let genre of results.genres">{{genre.name}}</a>   
+                <a *ngFor="let genre of results.genres" [routerLink]="['/genres',genre.slug]">
+                    {{genre.name}},
+                </a>   
             </section>  
 
             <section>
                 <h3>Developers</h3>
-                <a *ngFor="let developer of results.developers">{{developer.name}}</a> 
+                <a *ngFor="let developer of results.developers" [routerLink]="['/developers',developer.slug]">
+                    {{developer.name}},
+                </a>  
             </section>
-
             <section>
                 <h3>Platforms</h3>
-                <a *ngFor="let platform of results.platforms">{{platform.platform.name}}</a> 
+                <a *ngFor="let platform of results.platforms"[routerLink]="['/platforms',platform.platform.slug]" [queryParams]="{ id: platform.platform.id }">
+                    {{platform.platform.name}},
+                </a>  
             </section>
 
             <section>
                 <h3>Tags</h3>
-                <a *ngFor="let tag of results.tags">{{tag.name}}</a> 
+                <a *ngFor="let tag of results.tags" [routerLink]="['/tags',tag.slug]">
+                    {{tag.name}},
+                </a>  
             </section>
         </div>
     </div>

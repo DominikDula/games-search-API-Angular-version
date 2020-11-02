@@ -19,6 +19,7 @@ import { TagsComponent } from './views/tags/tags.component';
 import { SingletagComponent } from './views/singletag/singletag.component';
 import { PlatformsComponent } from './views/platforms/platforms.component';
 import { SingleplatformComponent } from './views/singleplatform/singleplatform.component';
+import { GlobalsearchComponent } from './views/globalsearch/globalsearch.component';
 //components
 import { TheNavigationComponent } from '@app/components/the-navigation/the-navigation.component';
 import { SearchGamesComponent } from './components/game/search-games/search-games.component';
@@ -53,6 +54,7 @@ import { GamescreenshotsComponent } from './components/game/gamescreenshots/game
     SingletagComponent,
     PlatformsComponent,
     SingleplatformComponent,
+    GlobalsearchComponent,
   ],
   imports: [
     BrowserModule,

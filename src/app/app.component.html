@@ -2,5 +2,7 @@
 
 <the-navigation></the-navigation>
 <search-games></search-games>
-<router-outlet></router-outlet>
+<div style="width: 100%;min-height: 100vh;" [@routeAnimations]="o && o.activatedRouteData && o.activatedRouteData['animation']">
+    <router-outlet #o="outlet"></router-outlet>
+</div>
 <the-footer></the-footer>
