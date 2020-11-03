@@ -40,7 +40,7 @@
                 <li>
                     <span class="span-title">Genres: </span> 
                     <span class="genre"> 
-                        <a *ngFor="let genre of game.genres.slice(0,3)" (click)="RouterPush('genres/',genre.slug)">
+                        <a *ngFor="let genre of game.genres.slice(0,3)"  (click)="RouterPush('genres/',genre.slug)">
                             {{genre.name}},
                         </a> 
                     </span>

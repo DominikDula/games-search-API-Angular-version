@@ -6,7 +6,7 @@
 
 <div class="single-game-container" [style]="{ backgroundImage: 'url(' + results.background_image_additional + ')' }" >
     <h1>About</h1>
-    <div class="single-game-desc" >
+    <div *ngIf="results" class="single-game-desc" >
         <div [innerHTML]="about"></div>
         <span *ngIf="boolean && about.length>500"  (click)="ReadMore()" >read more</span>
         <span *ngIf="!boolean && about.length>500" (click)="ReadLess()" >read less</span>

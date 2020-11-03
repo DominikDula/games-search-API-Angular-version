@@ -44,9 +44,7 @@ isHidden :boolean = false
   
 }
   ShowOnHover(){
-    if(window.innerWidth<665){
-        return false
-    }
+
     this.isHidden = !this.isHidden
 
 }
@@ -76,7 +74,7 @@ isHidden :boolean = false
 }
 
 RouterPush(route = '/games',slug = this.game.slug){
-    if(window.innerWidth<665){
+    if(window.innerWidth<665 && route!='genres/'){
         return false
     }  
         this.router.navigate([route,slug]);
