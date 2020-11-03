@@ -13,9 +13,9 @@ export class SearchGamesComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  GlobalSearch(value,event){
+  GlobalSearch(event){
     event.preventDefault()
-    value = this.gameInput.nativeElement.value
+    let value = this.gameInput.nativeElement.value
     this.router.navigate(['/search',value])
     this.gameInput.nativeElement.value = ''
     
